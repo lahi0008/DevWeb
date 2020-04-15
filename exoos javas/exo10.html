@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <script>
+   function affich(){
+    var N1 = parseFloat(document.form4.note1.value);
+	var C1 = parseInt(document.form4.coef1.value);
+	var N2 = parseFloat(document.form4.note2.value);
+	var C2 = parseInt(document.form4.coef2.value);
+	var N3 = parseFloat(document.form4.note3.value);
+	var C3 = parseInt(document.form4.coef3.value);	
+	var moy = ((N1*C1)+(N2*C2)+(N3*C3))/(C1+C2+C3);
+	document.form4.moyenne.value = moy;	
+   }
+  </script>	
+  </head>
+  <body>
+    <form name="form4">
+	Ecrire la note 1 : <input type="text" name="note1" size="1"> Ecrire le coefficient : <input type="text" name="coef1" size="1"><br><br>
+	Ecrire la note 2 : <input type="text" name="note2" size="1"> Ecrire le coefficient : <input type="text" name="coef2" size="1"><br><br>
+	Ecrire la note 3 : <input type="text" name="note3" size="1"> Ecrire le coefficient : <input type="text" name="coef3" size="1"><br><br>
+	<input type="button" value="Calculer la moyenne" onClick="affich();"><br><br>
+	La moyenne est : <input type="text" name="moyenne" size="4">
+	</form>
+  </body>
+</html>

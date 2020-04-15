@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Effet coverflow</title>
+    <style type="text/css">
+/* CSS3 Create
+
+Styles CSS liés à la démo:
+-> Effet coverflow en full CSS
+
+*/
+#article82{
+height:400px;
+/*background: #9162D8;
+/linear-gradient/
+background:-webkit-linear-gradient(#9162D8,#382A99);
+background:   -moz-linear-gradient(#9162D8,#382A99);
+background:     -o-linear-gradient(#9162D8,#382A99);
+background:        linear-gradient(#9162D8,#382A99); */
+font:.8em sans-serif;
+color:deepskyblue;
+text-shadow:0 -1px 0 rgba(0,0,0,.7);
+
+}
+#article82 input,
+#article82 label{position:absolute;bottom:5px;left:1em;color:rgba(255,255,255,.8);}
+#article82 label{left:2.2em;}
+
+
+#article82 ul{
+margin:100px auto;
+width:500px;
+height:160px;
+/*perspective*/
+-webkit-perspective:500px;
+   -moz-perspective:500px;
+    -ms-perspective:500px;
+     -o-perspective:500px;
+        perspective:500px;
+}
+#article82 ul li{
+display:inline-block;
+margin-right:-15px;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+position:relative;
+z-index:50;
+background-color:#111;
+background-image:-webkit-linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+background-image:-moz-linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+background-image:-o-linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+background-image:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+width:112px;
+height:165px;
+padding:10px;
+list-style:none;
+text-align:center;
+/*transform*/
+-webkit-transform:rotateY(45deg);
+   -moz-transform:rotateY(45deg);
+    -ms-transform:rotateY(45deg);
+     -o-transform:rotateY(45deg);
+        transform:rotateY(45deg);
+/*transition*/
+-webkit-transition:all .45s;
+   -moz-transition:all .45s;
+     -o-transition:all .45s;
+        transition:all .45s;
+border-radius:2px;
+}
+
+#article82 ul li a.prix{
+position:absolute;
+bottom:5px;
+right:5px;
+color:white;
+text-decoration:none;
+text-align:center;
+font-size:1.1em;
+padding:.5em;
+border-radius:2px;
+background-color:#222;
+background-image:-webkit-linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+background-image:-moz-linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+background-image:-o-linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+background-image:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,0));
+/*transition*/
+-webkit-transition:background-color 1s;
+   -moz-transition:background-color 1s;
+     -o-transition:background-color 1s;
+        transition:background-color 1s;
+}
+#article82 ul li img{
+width:100% !important;
+height:auto !important;
+}
+/* l'element central */
+#article82 ul li:nth-child(3){
+/*transform*/
+-webkit-transform:rotateY(0) scale(1.22);
+   -moz-transform:rotateY(0) scale(1.22);
+    -ms-transform:rotateY(0) scale(1.22);
+     -o-transform:rotateY(0) scale(1.22);
+        transform:rotateY(0) scale(1.22);
+background-color:#222;
+z-index:55;
+}
+#article82 ul li:nth-child(3) a.prix{
+background-color:#09C;
+}
+/* les elements qui suivent l'element central */
+#article82 ul li:nth-child(3) ~ li{
+/*transform*/
+-webkit-transform:rotateY(-45deg);
+   -moz-transform:rotateY(-45deg);
+    -ms-transform:rotateY(-45deg);
+     -o-transform:rotateY(-45deg);
+        transform:rotateY(-45deg);
+}
+#article82 ul li:last-child,
+#article82 ul li:first-child{
+    z-index:45;
+}
+
+
+#article82 ul:hover li:not(:hover){
+/*transform*/
+-webkit-transform:rotateY(45deg);
+   -moz-transform:rotateY(45deg);
+    -ms-transform:rotateY(45deg);
+     -o-transform:rotateY(45deg);
+        transform:rotateY(45deg);
+background-color:#111;
+}
+#article82 ul:hover li a.prix{
+background-color:#222;
+}
+/* tous les elements survoles 
+   ET meme ceux qui suivent l'élement central
+   (surclasser)
+*/
+#article82 ul li:hover,
+#article82 ul li:first-child:hover,
+#article82 ul li:nth-child(3) ~ li:hover{
+/*transform*/
+-webkit-transform:rotateY(0) scale(1.22);
+   -moz-transform:rotateY(0) scale(1.22);
+    -ms-transform:rotateY(0) scale(1.22);
+     -o-transform:rotateY(0) scale(1.22);
+        transform:rotateY(0) scale(1.22);
+z-index:60;
+background-color:#222;
+}
+#article82 ul:hover li:hover a.prix{
+background-color:#09C;
+}
+#article82 ul:hover li:hover ~ li{
+/*transform*/
+-webkit-transform:rotateY(-45deg);
+   -moz-transform:rotateY(-45deg);
+    -ms-transform:rotateY(-45deg);
+     -o-transform:rotateY(-45deg);
+        transform:rotateY(-45deg);
+}
+
+
+/*OMBRES*/
+#article82 input:checked ~ ul li{
+/*box-shadow*/
+-webkit-box-shadow:0 1px 0 rgba(255,255,255,.4) inset,-5px 0px 5px -5px rgba(0,0,0,.8);
+        box-shadow:0 1px 0 rgba(255,255,255,.4) inset,-5px 0px 5px -5px rgba(0,0,0,.8);
+}
+#article82 input:checked ~ ul li:nth-child(3){
+/*box-shadow*/
+-webkit-box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 2px 10px rgba(0,0,0,.8),0 15px 20px -10px rgba(0,0,0,.3);
+        box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 2px 10px rgba(0,0,0,.8),0 15px 20px -10px rgba(0,0,0,.3);
+}
+#article82 input:checked ~ ul li:nth-child(3) ~ li{
+/*box-shadow*/
+-webkit-box-shadow:0 1px 0 rgba(255,255,255,.4) inset,5px 0px 5px -5px rgba(0,0,0,.8);
+        box-shadow:0 1px 0 rgba(255,255,255,.4) inset,5px 0px 5px -5px rgba(0,0,0,.8);
+}
+#article82 input:checked ~ ul:hover li{
+/*box-shadow*/
+-webkit-box-shadow:0 1px 0 rgba(255,255,255,.4) inset,-5px 0px 5px -5px rgba(0,0,0,.8);
+        box-shadow:0 1px 0 rgba(255,255,255,.4) inset,-5px 0px 5px -5px rgba(0,0,0,.8);
+}
+#article82 input:checked ~ ul:hover li:hover{
+/*box-shadow*/
+-webkit-box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 2px 10px rgba(0,0,0,.8),0 15px 20px -10px rgba(0,0,0,.3);
+        box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 2px 10px rgba(0,0,0,.8),0 15px 20px -10px rgba(0,0,0,.3);
+}
+#article82 input:checked ~ ul:hover li:hover ~ li{
+/*box-shadow*/
+-webkit-box-shadow:0 1px 0 rgba(255,255,255,.4) inset,5px 0px 5px -5px rgba(0,0,0,.8);
+        box-shadow:0 1px 0 rgba(255,255,255,.4) inset,5px 0px 5px -5px rgba(0,0,0,.8);
+}
+</style>
+</head>
+<body>
+   <section id="article82" class="crayon article-css-82 demoTime">
+                            <div><input id="inpCh" type="checkbox" checked="checked" /><label for="inpCh">Sur Firefox, désactivez les ombres</label>
+<ul>
+<li>
+	<a href="#"><img src="img1.png" alt="Tee shirt HTML5" width='100' height='100' style='height:100px;width:100px;' /></a>
+	#HTML5?!
+	<a href="#" class="prix">18,90€</a>
+</li><!--
+--><li>
+	<a href="#"><img src="img2.png" alt="Tee shirt HTML5" width='100' height='100' style='height:100px;width:100px;' /></a>
+	#CSS3?!
+	<a href="#" class="prix">18,90€</a>
+
+</li><!--
+--><li>
+	<a href="#"><img src="img3.png" alt="Tee shirt HTML5" width='100' height='100' style='height:100px;width:100px;' /></a>
+	#HTML5?!
+	<a href="#" class="prix">26,90€</a>
+</li><!--
+--><li>
+	<a href="#"><img src="img4.png" alt="Tee shirt HTML5" width='100' height='100' style='height:100px;width:100px;' /></a>
+	#CSS3?!
+	<a href="#" class="prix">22,90€</a>
+</li><!--
+--><li>
+	<a href="#"><img src="img5.png" alt="Tee shirt HTML5" width='100' height='100' style='height:100px;width:100px;' /></a>
+	#HTML5?!
+	<a href="#" class="prix">22,90€</a>
+</li>
+</ul>
+</div>
+
+
+                        </section> 
+</body>
+</html>

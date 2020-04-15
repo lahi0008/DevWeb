@@ -1,0 +1,182 @@
+﻿<!DOCTYPE HTML>
+<HTML>
+    <head>
+        <title>Ma deuxième Page</title>
+        <meta charset="UTF-8"/>
+		<link rel="stylesheet" href="page2.css"/>
+		<script language="javascript" >
+		    window.onload = init;
+            function init() {
+	            var bouton = document.getElementById("bouton1");
+	            bouton.onclick = affichage;
+            }
+		
+            function affichage() {	
+			
+		//Récupération du nom et prénom.
+				var p = document.getElementById("prenom").value;
+		        var n = document.getElementById("nom").value;
+				
+		//Fonction constructeur Identité.
+			    function Identite (prenom, nom) {
+			        this.prenom = prenom;
+			    	this.nom = nom;
+				}
+				
+		//Méthode.	
+		        Identite.prototype.personne = function () {
+				    document.getElementById("div1").innerHTML = ("Monsieur/Madame : " + this.prenom + " " + this.nom );  
+				}
+				
+		//Objets.
+		        var individu1 = new Identite (p,n);
+				
+		//Appels.
+		        individu1.personne();
+				
+		//Récupération capital, nombre d'années, taux et nature du placement.
+		        var a = document.getElementById("capital").value;
+			    var b = document.getElementById("annee").value;
+			    var c = document.getElementById("taux").value;
+			    var d = document.getElementById("nature").value;
+		
+		//Fonction constructeur Placement.
+		        function Placement (capital, nbannee, taux, nature) {
+			        this.capital = capital;
+			    	this.nbannee = nbannee;
+				    this.taux = taux;
+				    this.nature = nature;
+			    }
+		
+        //Méthode intérêt simple.	
+		        Placement.prototype.calculSimple = function () {
+				    var Msimple = (this.capital * ( 1 + this.nbannee * this.taux));
+					return Msimple;
+			    }
+				
+		        Placement.prototype.affichageMontant = function () {
+				    document.getElementById("div2").innerHTML = ("Vous avez placé un capital de " + this.capital + " " + "pour une durée de " + this.nbannee + " " + "année(s)"); 
+					if ( this.nature == "s") {
+                    document.getElementById("div3").innerHTML = ("Le montant obtenu est avec les intérêt simple : " + this.calculSimple() + " " + "F cfa");
+					} else {
+                    document.getElementById("div3").innerHTML = ("Le montant obtenu avec les intérêt composé : " + this.calculCompose() + " " + "F cfa");
+                    }
+				
+				}
+				
+		
+        
+        //Méthode intérêt composé.
+		        Placement.prototype.calculCompose = function () {
+			    var Mcompose = this.capital * (Math.pow ( 1 + this.taux ), this.nbannee);
+				//document.getElementById("div4").innerHTML = ("L'intérêt Composé est égale à : " + Mcompose + " " + "F cfa");
+				return Mcompose;
+			}
+		
+		        Placement.prototype.cumulInteret = function () {
+				    if ( this.nature == "s") {
+					    return (this.calculSimple() - this.capital );
+					} else {
+					    return (this.calculCompose() - this.capital );
+					}
+				    
+				}
+		    
+			      Placement.prototype.affichageInteret = function () {
+				   // document.getElementById("div2").innerHTML = ("Vous avez placé un capital de " + this.capital + " " + "pour une durée de " + this.nbannee + " " + "année(s)"); 
+					if ( this.nature == "s") {
+                    document.getElementById("div4").innerHTML = ("Le cumul des intérêt simple : " + this.cumulInteret() + " " + "F cfa");
+					} else {
+                    document.getElementById("div4").innerHTML = ("Le cumul des intérêt composé : " + this.cumulInteret() + " " + "F cfa");
+                    }
+				
+				}
+		  
+		//Objets.
+			    var place1 = new Placement(a, b, c, d);
+		       /* if ( d == "s") {
+				    place1.calculSimple();	
+				} else {
+				     place1.calculCompose();
+				}
+				*/
+				
+				place1.affichageMontant();
+				place1.affichageInteret();
+				
+				
+				
+				
+			
+		    }
+		
+		 
+		
+		
+		
+		
+		
+		</script>
+    </head>
+    <body>
+        <h1> Réalisation d'un Formulaire </h1>
+		<form method="post">
+		    <p> 		
+		        <label for="nom"> Entrer votre nom </label>
+		        <input type="text" placeholder="votre nom" id="nom" />  
+			</p>
+            <p> 
+			    <label for="prenom">Entrer votre prénom </label>
+			    <input type="text" placeholder="votre prénom" id="prenom" />  
+			</p>
+		    <p> 
+			    <label for="capital">Entrer le Capital</label>
+			    <input type="number" placeholder="capital" id="capital"/>
+			</p>
+            <p> 
+			    <label for="annee"> Anneé de Placement </label>
+			    <input type="number" placeholder="année" id="annee" />  
+			</p>
+			
+			<p>	
+			    <label for="nature">Nature du Placement </label>
+				<input type="text" placeholder="Nature" id="nature" /> 
+			</p>
+			<p>    
+			    <label for="taux">Donner le Taux </label>
+			    <input type="number" placeholder="Taux" id="taux" min="0" max="1"/>  
+			</p> 
+			</br>
+			<p> 
+			<fieldset>
+			<legend> Votre commentaire est facultatif </legend>
+			    <label for="commentaire">Rédigez votre commentaire </label></br>
+			    <textarea placeholder="votre commentaire ..." id="commentaire"></textarea>  
+			</p>
+			</fieldset> </br>
+			<input type="button" value="envoyer" class="envoyer" id="bouton1"/>
+		</form>
+		<section id="sec1">
+		    <div id="div1">
+			</div>
+		    <div id="div2">
+			</div>
+			<div id="div3">
+			</div>
+			<div id="div4">
+			</div>
+			
+		</section>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

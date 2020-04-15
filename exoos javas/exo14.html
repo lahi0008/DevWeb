@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <script>
+   function affich(){
+    var NB = parseInt(document.form7.nbre.value);
+	
+	if(NB<=10){document.form7.fact.value = NB*100;}
+	if(NB>=11 && NB<=30){document.form7.fact.value = (10*100)+((NB-10)*90);}
+	if(NB>30){document.form7.fact.value = (10*100)+(20*90)+((NB-30)*80);}
+	
+    }
+   
+  </script>	
+  </head>
+  <body>
+  
+    <form name="form7">
+	Photocopie<br><br>
+	Entrer le nombre de photocopies : <input type="text" name="nbre" size=10> <br><br>
+	
+	<input type="button" value="Calculer" onClick="affich();"><br><br>
+	Votre facture est : <input type="text" name="fact" size=15 >
+	</form>
+	
+	
+  
+  
+  
+  
+  </body>
+</html>

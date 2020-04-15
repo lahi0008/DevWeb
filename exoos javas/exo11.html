@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <script>
+   function affich(){
+    var nb = parseInt(document.form5.nombre.value);
+	if(nb%2==0){
+	document.form5.test.value = "pair" ;}	
+	if(nb%2!=0){ 
+	document.form5.test.value = "impair" ;}
+	
+    }
+   
+  </script>	
+  </head>
+  <body>
+  
+    <form name="form5">
+	Pair ou Impair ?<br><br>
+	Ecrire un nombre<input type="text" name="nombre" size=10> <br><br>
+	<input type="button" value="Tester" onClick="affich();"><br><br>
+	C'est un nombre<input type="text" name="test" size=3 >
+	</form>
+  
+  
+  
+  
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctypeHTML>
+    <html>
+        <head>
+            <title>PAGE BLOG</title>
+            <meta charset="utf-8"/>
+			
+			<script>
+            function Entree(t,c,i,d){
+            this.titre=t;
+            this.corps=c;
+            this.image=i;
+            this.date=d;
+            }
+            function Identification(i){
+            this.image=i;
+            }
+            function Blog(Entree,Identification){
+            this.Entree=Entree;
+            this.Identification=Identification;
+            }
+            Entree.prototype.getTitre=function(){
+            return this.titre;
+            }
+            Entree.prototype.getCorps=function(){
+            return this.Corps;
+            }
+            Entree.prototype.getImg=function(){
+            return this.img;
+            }
+            Entree.prototype.getDate=function(){
+            return this.date;
+            }
+            Identification.prototype.getImage=function(){
+            return this.Image;
+            }
+            Blog.prototype.getEntree=function(){
+            return this.Entree;
+            }
+            Blog.prototype.getIdentification=function(){
+            return this.Identification;
+            }
+            Entree.prototype.setTitre=function(titre){
+            return this.titre=titre;
+            }
+            Entree.prototype.setCorps=function(corps){
+            return this.corps=corps;
+            }
+            Entree.prototype.setImg=function(img){
+            return this.img=img;
+            }
+            Entree.prototype.Setdate=function(date){
+            this.date=date;
+            }
+            Identification.prototype.setImage=function(img){
+            return this.image=img;
+            }
+            window.onload=creer;
+            function creer(){
+            var image="image.png";
+            var Identificatiion=new Identification(image);
+            var date=prompt("entrez la date");
+            var titre=prompt("mettez le titre");
+            var corps=prompt("mettez quelque chose ici");
+            var img="img.png";
+			var entree=[];
+            <!-- var entree=new array(); -->
+            entree[0]=new Entree(titre,corps,img,date);
+            entree[1]=new Entree("dessin","mon dessin","test.jpg","27/07/2018");
+            var blog=new Blog(entree,Identification);
+            alert(entree[0].getTitre());
+            alert(entree[1].setTitre("mathematique"));
+            }
+          </script>  
+        </head>
+        <body>
+          <div id="div1">
+		  
+		  </div>
+		  <div id="div2">
+		  
+		  </div>
+        </body>
+    </html>

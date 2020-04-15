@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <script>
+   function affich(){
+    var X = parseInt(document.form8.iks.value);
+	var Y = parseInt(document.form8.igrec.value);
+	var res = X
+	var i =1
+	while(i<Y)
+	{
+	i= i+1
+	res = res + X
+	
+	
+    }
+	document.form8.res.value = res
+	}
+	
+   
+  </script>	
+  </head>
+  <body>
+  
+    <form name="form8">
+	Multiplication<br><br>
+	Entrer X : <input type="text" name="iks" size=10> <br><br>
+	Entrer Y : <input type="text" name="igrec" size=10> <br><br>
+	
+	<input type="button" value="Calculer" onClick="affich();"><br><br>
+	Résultat : <input type="text" name="res" size=15 >
+	
+	
+  </form>
+  
+  
+  
+  </body>
+</html>

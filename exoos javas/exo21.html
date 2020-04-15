@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <script>
+  
+  var tab = new Array();
+  var N = parseInt(prompt("ecrire le nombre d'éléments du tableau"));
+  for(i=0;i<N;i++)
+  {
+  tab[i] = parseInt(prompt("ecrire un nombre"));
+   if(tab[i]==0){N=i;}
+  }
+  document.write("Valeurs saisies : <br>");
+	for(i=0;i<N;i++)
+    {
+	document.write(tab[i]+"<br>");
+	}
+	
+   
+  </script>	
+  </head>
+  <body>
+   
+  </body>
+</html>

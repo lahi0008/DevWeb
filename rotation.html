@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rotation Menu</title>
+    <style type="text/css">
+
+#article16{
+height:360px;
+font-family:"TeXGyreReg",sans-serif;
+font-size:1.05em;
+background:#627878;
+    margin-right: 773px;
+}
+
+#article16 dl{
+position:relative;
+top:0px;
+left:50%;
+margin-left:-70px;
+width:150px;
+height:155px;
+color:#324040;
+text-align:center;
+background:#04b3d2;
+background:-webkit-linear-gradient(#04b3d2,#48dfff);
+background:-moz-linear-gradient(#04b3d2,#48dfff);
+background:-ms-linear-gradient(#04b3d2,#48dfff);
+background:-o-linear-gradient(#04b3d2,#48dfff);
+background:linear-gradient(#04b3d2,#48dfff);
+border-radius:4px;
+-webkit-box-shadow:0px 0px 6px rgba(0,0,0,0.7);
+box-shadow:0px 0px 6px rgba(0,0,0,0.7);
+-webkit-transform-origin:50% 120px;
+-moz-transform-origin:50% 120px;
+-ms-transform-origin:50% 120px;
+-o-transform-origin:50% 120px;
+transform-origin:50% 120px; 
+-webkit-animation:bounceOut 0.7s ease-in-out;
+-moz-animation:bounceOut 0.7s ease-in-out;
+-ms-animation:bounceOut 0.7s ease-in-out;
+-o-animation:bounceOut 0.7s ease-in-out;
+animation:bounceOut 0.7s ease-in-out;
+}
+
+#article16 dt{
+position:absolute;
+bottom:0px;
+width:100%;
+height:30px;
+padding-top:5px;
+}
+
+#article16 dd{
+-webkit-transform:rotate(180deg);
+-moz-transform:rotate(180deg);
+-ms-transform:rotate(180deg);
+-o-transform:rotate(180deg);
+transform:rotate(180deg);
+}
+
+#article16 dd a{
+display:block;
+height:24px;
+padding:3px 0px;
+color:#324040;
+text-decoration:none;
+}
+
+#article16 dd a:hover{
+background:rgba(255,255,255,0.1);
+}
+#article16 dl:hover{
+-webkit-transform:rotate(-180deg);
+-moz-transform:rotate(-180deg);
+-mstransform:rotate(-180deg);
+-o-transform:rotate(-180deg);
+transform:rotate(-180deg);
+-webkit-animation:bounceIn 0.7s ease-in-out;
+-moz-animation:bounceIn 0.7s ease-in-out;
+-ms-animation:bounceIn 0.7s ease-in-out;
+-o-animation:bounceIn 0.7s ease-in-out;
+animation:bounceIn 0.7s ease-in-out;
+}
+
+@-webkit-keyframes bounceIn {
+from {-webkit-transform:rotate(0deg);}
+75%{-webkit-transform:rotate(-200deg);}
+90%{-webkit-transform:rotate(-175deg);}
+to {-webkit-transform:rotate(-180deg);}
+}
+@-webkit-keyframes bounceOut {
+from {-webkit-transform:rotate(-360deg);}
+0% {-webkit-transform:rotate(-180deg);}
+10%{-webkit-transform:rotate(-160deg);}
+to {-webkit-transform:rotate(-360deg);}
+}
+@-moz-keyframes bounceIn {
+from {-moz-transform:rotate(0deg);}
+75%{-moz-transform:rotate(-200deg);}
+90%{-moz-transform:rotate(-175deg);}
+to {-moz-transform:rotate(-180deg);}
+}
+@-moz-keyframes bounceOut {
+from {-moz-transform:rotate(-360deg);}
+0% {-moz-transform:rotate(-180deg);}
+10%{-moz-transform:rotate(-160deg);}
+to {-moz-transform:rotate(-360deg);}
+}
+@-ms-keyframes bounceIn {
+from {-ms-transform:rotate(0deg);}
+75%{-ms-transform:rotate(-200deg);}
+90%{-ms-transform:rotate(-175deg);}
+to {-ms-transform:rotate(-180deg);}
+}
+@-ms-keyframes bounceOut {
+from {-ms-transform:rotate(-360deg);}
+0% {-ms-transform:rotate(-180deg);}
+10%{-ms-transform:rotate(-160deg);}
+to {-ms-transform:rotate(-360deg);}
+}
+@-o-keyframes bounceIn {
+from {-o-transform:rotate(0deg);}
+75%{-o-transform:rotate(-200deg);}
+90%{-o-transform:rotate(-175deg);}
+to {-o-transform:rotate(-180deg);}
+}
+@-o-keyframes bounceOut {
+from {-o-transform:rotate(-360deg);}
+0% {-o-transform:rotate(-180deg);}
+10%{-o-transform:rotate(-160deg);}
+to {-o-transform:rotate(-360deg);}
+}
+@keyframes bounceIn {
+from {transform:rotate(0deg);}
+75%{transform:rotate(-200deg);}
+90%{transform:rotate(-175deg);}
+to {transform:rotate(-180deg);}
+}
+@keyframes bounceOut {
+from {transform:rotate(-360deg);}
+0% {transform:rotate(-180deg);}
+10%{transform:rotate(-160deg);}
+to {transform:rotate(-360deg);}
+}
+
+#article16 .masque{
+position:absolute;
+z-index:50;
+width:585px;
+height:135px;
+top:0;left:0;
+background:#627878;
+background:-webkit-linear-gradient(#324040,#627878);
+background:-moz-linear-gradient(#324040,#627878);
+background:-ms-linear-gradient(#324040,#627878);
+background:-o-linear-gradient(#324040,#627878);
+background:linear-gradient(#324040,#627878);
+
+}
+
+#article16 .ombre{
+position:absolute;
+z-index:40;
+width:300px;
+height:6px;
+top:133px;
+margin-top:-103px;
+left:142px;
+-webkit-box-shadow:0px 100px 3px black;
+box-shadow:0px 100px 3px black;
+border-radius:75px 75px 75px 75px / 3px 3px 3px 3px;
+}
+</style>
+</head>
+<body>
+    <section id="article16" class="crayon article-css-16 demoTime">
+                            <dl class="menu">
+     
+     <dt class="btnRot">Partagez</dt>
+     
+     <dd><a href="">...</a></dd>
+     <dd><a href="">Delicious</a></dd>
+     <dd><a href="">Facebook</a></dd>
+     <dd><a href="">Twitter</a></dd>
+     
+</dl>
+
+<div class="masque"></div>
+<div class="ombre"></div>
+                        </section>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <script>
+   function affich(){
+    var age = parseInt(document.form6.age.value);
+	var sex = document.form6.sexe.value;
+	
+	if((age>20) && (sex=='M')){ document.form6.situ.value = "imposable";} if((age<=20) && (sex=='M')){document.form6.situ.value = "non-imposable";}
+	if(((age>=18)&&(age<=35)) && (sex=='F')){ document.form6.situ.value = "imposable";}if(((age<18)||(age>35)) && (sex=='F')){document.form6.situ.value = "non-imposable";}
+	
+    }
+   
+  </script>	
+  </head>
+  <body>
+  
+    <form name="form6">
+	Imposable ou Non-Imposable ?<br><br>
+	Entrer l'age<input type="text" name="age" size=10> <br><br>
+	Entrer le sexe(M/F)<input type="text" name="sexe" size=10> <br><br>
+	<input type="button" value="Tester" onClick="affich();"><br><br>
+	Votre situation est : <input type="text" name="situ" size=15 >
+	</form>
+  
+  
+  
+  
+  </body>
+</html>

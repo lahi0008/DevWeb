@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Machine à calculer</title>
+	<meta charset ="utf-8">
+	<link rel="stylesheet" href="calculatrice.css" />
+	<script>
+     function add(caract){
+	 
+	 document.form1.display.value  = document.form1.display.value + caract;
+	 
+	 }
+	 function affich(){
+	 var x = eval(document.form1.display.value);
+	 document.form1.display.value = x;
+	 }
+	 
+	 function pourcentage(){
+	 document.form1.display.value =  document.form1.display.value/100;
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	</script>
+	</head>
+	<body>
+	<center>
+	<form name="form1">
+	<table border=2 cellpadding=0 cellspacing=8>
+	<tr><td colspan=4><input size= 22 type=text name=display id="affichage" placeholder=0 readonly align="right"></td><tr>
+	<tr><td><input type="reset" class="other" value=" C ">     </td><td>  <input type="button"  class="other" onClick="add('-')" value=" +/- ">  </td><td>  <input type="button" onClick="pourcentage()" class="other" value="  %  ">  </td><td> <input type="button" onClick="add('/')" class="other" value="    /    ">   </td></tr>
+	<tr><td>   <input type="button" name="sept" onClick="add('7')" value="  7  "> </td><td> <input type="button" name="huit" onClick="add('8')" value="  8  ">   </td><td>  <input type="button" name="neuf" onClick="add('9')" value="  9   ">  </td><td>  <input type="button" onClick="add('*')" class="other" value="   *   ">  </td></tr>
+	<tr><td>  <input type="button" name="quatre" onClick="add('4')" value="  4  ">  </td><td>  <input type="button" name="cinq" onClick="add('5')" value="  5  ">  </td><td>  <input type="button" name="six" onClick="add('6')" value="  6   ">  </td><td><input type="button" onClick="add('-')" class="other" value="   -   ">    </td></tr>
+	<tr><td>  <input type="button" name="un" onClick="add('1')"   value="  1  ">  </td><td>  <input type="button" name="deux" onClick="add('2')"  value="  2  ">  </td><td> <input type="button" name="trois" onClick="add('3')" value="  3   ">   </td><td>  <input type="button" onClick="add('+')" class="other" value="   +   ">  </td></tr>
+	
+	<tr><td colspan=2>  <input type="button" size="40"  onClick="add('0')" id="zero" name="zero" value="       0        ">  </td>                 <td>  <input type="button" onClick="add('.');" value="   ,   ">  </td><td>  <input type="button" onClick="affich();"  class="egal" value="   =   ">  </td></tr>
+	
+	</form>
+	</center>
+	
+	
+	
+	</body>
+</html>

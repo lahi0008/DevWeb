@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <script>
+   function affich(){
+   var V = 100000 * parseInt(document.form2.vache.value);
+   var M = 30000 * parseInt(document.form2.mouton.value);
+   var P = V+M;
+   document.form2.prix.value= P;
+   }
+   
+  </script>	
+  </head>
+  <body>
+    <form name="form2">
+	Le prix d'une vache est 100.000F et celui d'un mouton est 30.000 F. <br><br>
+	Nombre de vaches que vous désirez acheter: <input type="text" name="vache" value=""><br><br>
+	Nombre de moutons que vous désirez acheter:<input type="text" name="mouton" value=""><br><br>
+	<input type="button" value="Calculer" onClick="affich();"><br><br>
+	Le prix total est : <input type="text" name="prix"  value="">
+	
+	</form>
+  
+  
+  
+  
+  </body>
+</html>

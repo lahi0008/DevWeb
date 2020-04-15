@@ -1,0 +1,61 @@
+<!doctype html><!--
+https://openclassrooms.com/courses/prenez-en-main-bootstrap/un-peu-de-pratique-15-->
+<html>
+<head>
+<meta name="viewport" content="width-device-width,initial-scale=1"/>
+<link  rel="stylesheet" href="bootstrap/css/bootstrap.css"/ >
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-lg-12" style="border:2px solid; background:green;height:50px;border-radius:0.5em;"></div>
+</div>
+<div class="row">
+<div class="col-lg-2"style="border:2px solid;border-radius:0.5em;background:green; height:300px;"></div>
+<div class="col-lg-8"style="border-top:2px solid;border-radius:0.5em;background:green; height:300px;"></div>
+<div class="col-lg-2"style="border:2px solid;border-radius:0.5em;background:green; height:300px;"></div>
+</div>
+<div class="row">
+<div class="col-lg-2"style="border:2px solid;border-radius:0.5em;background:green; height:270px;"></div>
+<div class="col-lg-8"style="border-bottom:2px solid;background:green;border-radius:0.5em; height:295px;"></div>
+<div class="col-lg-2"style="border:2px solid;border-radius:0.5em; background:green;height:270px;"></div>
+</div>
+<div class="row">
+<div class="col-lg-12" style="border:2px solid; height:50px;border-radius:0.5em;background:green; margin-bottom:10px;"></div>
+</div>
+
+
+</div>
+<style>
+.col-lg-2,.col-lg-8{
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  
+   
+}
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+.col-lg-12{
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  
+   
+}
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+</style>
+</body>
+</html>
