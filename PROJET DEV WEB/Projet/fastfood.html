@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fast food le campus</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+	<script language="javascript" src="fastfood.js"></script>
+
+</head>
+<body>
+ <div class="container">
+ 	<header class="row" style="border:2px solid; height:85px;border-radius:0.5em; background:#f5671b;">
+ 		<div class="col-xs-12"><center><h1><i><marquee behavior="alternate">FAST FOOD MA SHA ALLAH</marquee> </i></h1></center></div>
+ 	</header>
+ 	<section class="row">
+ 		<div class="col-xs-6" style="border:2px solid; height:70em;border-radius:0.5em; background:#d1c17a;">
+ 			<form action="javascript:" method="POST">
+				<center><h4><i>Commande</i></h4></center>
+				<table  class="table">
+					<tr><td><i>Pr&eacute;nom</i></td><td><input type="text" id="prenom"/></td></tr>
+					<tr><td><i>Nom</i></td><td><input type="text" id="nom"/></td></tr>
+					<tr><td><i>Adresse</i></td><td><textarea id="adresse"></textarea></td></tr></table>
+				<table class="table" style="border:1px solid ;border-radius: 3em; background: yellow;">	
+					<td id="sandwich"><i>Sandwich</i></td>
+					    <td><img src="Steak.jpg" id="Steak" style=" opacity:1;">
+					           <div id="prix" style="position: absolute;top:320px; color: black;"><strong>800FCFA</strong></div>
+					           Qte<input type="number" min="0" max="8" id="qteSandwichSteak"/></td>
+						  <td><img src="foie.jpg" id="foie" style="opacity:1;">
+						       <div style="position: absolute;top:320px; color: black;"><strong>800FCFA</strong></div>
+						       Qte<input type="number" min="0" max="8" id="qteSandwichFoie"/></td>
+						  <td><img src="poulets.jpg" id="poulet" style="opacity:1;">
+						       <div style="position: absolute;top:320px; color: black;"><strong>1000FCFA</strong></div>
+						       Qte<input type="number" min="0" max="8" id="qteSandwichPoulet"/></td>
+						   <style> img{ width: 120px;height: 120px;cursor: pointer;}img:hover{width: 120px;height: 120px;border: 1px solid green; }</style>
+				</table>	  
+				<table class="table"> 	
+					<tr><td><i>Ingr&eacute;dients</i></td><td><input type="checkbox" name="ingredientH" value="piment"/><i> Piment</i></td>
+												<td><input type="checkbox" name="ingredientH" value="ketchup"/><i> Ketchup</i></td>
+												<td><input type="checkbox" name="ingredientH" value="mayonnaise"/><i> Mayonnaise<i/></td>
+					</tr>
+				</table>
+				<table class="table" style="border:1px solid;border-radius: 3em; background: yellow;">
+					<tr><td><i>Hamburger</i></td>
+					    <td><img src="hamburger simple.png" id="simple" style="opacity:1; background:white;">
+					            <div style="position: absolute;top:570px; color: black;"><strong>1200FCFA</strong></div>
+					            Qte <input type="number" min="0" max="8" id="qteHamburgerSimple"/></td>    
+						<td><img src="hamburger-double.jpg" id="double" style="opacity:1;" />
+                                 <div style="position: absolute;top:570px; color: black;"><strong>2000FCFA</strong></div>
+                                 Qte <input type="number" min="0" max="8" id="qteHamburgerDouble"/></td>
+						<td><img src="la-gamme-royale hamburger.jpg" id="royale" style="opacity:1;">
+						         <div style="position: absolute;top:570px; color: black;"><strong>1500FCFA</strong></div>
+						         Qte <input type="number" min="0" max="8" id="qteHamburgerRoyale"/></td>
+					</tr>
+				<table class="table">						
+					<tr><td><i>Ingr&eacute;dients</i></td><td><input type="checkbox" name="ingredientE" value="piment"/><i> Piment </i></td>
+												<td><input type="checkbox" name="ingredientE" value="ketchup"/><i> Ketchup<i/></td>
+												<td><input type="checkbox" name="ingredientE" value="mayonnaise"/><i> Mayonnaise</i></td>
+					</tr>
+				</table>
+                <table class="table" style="border:1px solid;border-radius: 3em; background:yellow;">
+					<tr><td><i>Chawarma</i></td>
+					    <td><img src="Chawarma à la viande hachée.jpg" id="Chawarma-viande" style="opacity:1;">
+					             <div style="position: absolute;top:810px; color: black;"><strong>1000FCFA</strong></div>
+					             Qte <input type="number" min="0" max="10" id="qteChawarmaViande"  /></td>
+						<td><img src="chawarma foiere.jpg" id="chawarma-foiere" style="opacity:1;"/>
+							     <div style="position: absolute;top:810px; color: black;"><strong>1200FCFA</strong></div>
+							     Qte <input type="number" min="0" max="10" id="qteChawarmaFoie"  /></td>
+						<td><img src="chawarma poulet.jpg" id="chawarma-poulet" style="opacity:1;">
+							     <div style="position: absolute;top:810px; color: black;"><strong>1500FCFA</strong></div> 
+							     Qte <input type="number" min="0" max="8" id="qteChawarmaPoulet"  /></td>
+						   </tr>
+				</table>
+				<table class="table">	
+					<tr><td><i>Ingr&eacute;dients</i></td><td><input type="checkbox" name="ingredientG" value="piment"/><i> Piment</i></td>
+												<td><input type="checkbox" name="ingredientG" value="ketchup"/><i> Ketchup</i></td>
+												<td><input type="checkbox" name="ingredientG" value="mayonnaise"/><i> Mayonnaise</i></td>
+					</tr>
+					<tr><td><input type="submit" id="bouton1" value="Commander""/></td><td><input type="reset" id="bouton2" value="Annuler"/></td></tr>
+				</table>	
+ 		</div ">
+ 		<div class="col-xs-6" style="border:2px solid; height:70em;border-radius:0.5em; background:#d1c17a;">
+ 		<center ><h4><i>Facture</i></center></h4><br/>
+		<div id="position1"> </div><br/>
+		vous avez command&eacute;:<br/><br/>
+		<div class="position2"></div>
+		<table id="facture" class="table" border=" 2px">
+		   <tr><td><i>Designation</i></td><td><i>Montant</i></td></tr>
+		   <tr><td></td><td></td></tr>
+
+		</table>
+		
+				   <i></i>
+				   </br></br>
+				<div id="position2"> </div>   
+		<center><h4><i>Fast Food Le Campus vous remercie de votre fid&eacute;lit&eacute;.</i></h4></center>
+		          <button style="float: right;">Imprimer</button>
+		     <h3><marquee behavior="alternate">A Bientôt !!!</marquee></h3>
+		</div>
+
+ 	</section>
+ </div>
+</body>
+</html>

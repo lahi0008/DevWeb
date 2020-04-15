@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Catalogue enseignant</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+  body {
+    background-color: purple;
+    margin: 0%;
+  }
+  #tableau{
+    position: absolute;
+    top: 450px;
+    left: 600px;
+    background-color: aqua;
+  }
+  pre{
+    font-size: 100%;
+    font-style: italic;
+    color: cornflowerblue;
+  }
+  h1{
+    color: aqua;
+  }
+  .input label{
+    display: block;
+    font-weight: bold;
+    padding: 2px 0;
+
+  }
+  input,button{
+    font: inherit;
+  }
+  button{
+    margin-top: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px #34495e;
+    border-radius: 0;
+    background: #ecf0f1;
+    cursor: pointer;
+  }
+  input[type="button"]{
+    margin-top: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px #34495e;
+    border-radius: 0;
+    background: #ecf0f1;
+    cursor: pointer;
+  }
+  .insert{
+    background: #2ecc71;
+    position: absolute;
+    top: 400px;
+    left: 200px
+  }
+  .get{
+    background:yellow;
+  }
+  .update{
+    background: #3490db;
+    position: absolute;
+    left: 500px;
+    
+  }
+  .delete{
+    background:#e74c3c;
+    position: absolute;
+    
+    left: 500px;
+  }
+  input[type=button]{
+	background-color:green;
+	color:white;
+}
+  
+</style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body style="background-color:darkviolet">
+  <center><h1>Espace Enseignants</h1></center>  
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <div class="container" >
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: gray;" >
+            <ul class='nav navbar-nav'>
+                <li ><a class="navbar-brand" href="index.html">Accueil</a></li>
+                <li><a href="#tableau">Liste Des Enseignants</a></li>
+                <li><a href="#delete">Supprimer un Enseignant</a></li>
+                <li><a href="#update">Mise a jour Enseignant</a></li>
+
+            </ul>
+            <form class="nav navbar-form">
+              <input type="text" class="form-control" input-sm placeholder="entrer du text" >
+              <button type="submit" class="btn btn-primary btn-sm">Rechercher</button>
+          </form>
+        </nav>
+       
+    </div>
+    <div class="container" style="font-weight:900px">
+
+    </div style="top:40px" >
+    <img src="images/enseignants.jpg" width="180" height="250" class="ense" >   
+       
+    <div class='input'>
+
+        <br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+        <br><br><br><br><br>
+    <section class="insert" style="margin-top:50px" style='font-size:50px'>
+    <div style='border: 1px solid '>
+        
+        <h3>Inserer Enseignats</h3>
+    </div>
+    <form name="formulaire" method="POST" action="/insert">
+        <div class="input" style="margin-top:50px";>
+            <div class="input"><label>ID</label><input type="text" id="iden" > </div>
+  <label>prenom</label>
+  <input type="text" id="prenom"/></tr></div>
+  <div class="input"><label>Nom</label><input type="text" id="Nom"></div>
+  <div class="input"> <label>Date de prise de Fonction</label> <input type="date" id="dpf"></div>
+  <div class='input'><label>Departement</label><input type="text" id="dpt"></div>
+  <div class="input"><label>Cours</label><input type="text" id="crs" > </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Ajouter!" class="btn btn-primary btn-sm" onclick="ajouter();">
+    </form>
+</div>
+</section>
+<section class="get">
+  <table border="1" cellspacing="0" id="tableau">
+    <tr><td colspan="6"><h1><pre>     Enseignants Inscrits</pre></h1></td></tr>
+    <tr>
+      <td>ID</td>
+      <td>Prenom</td>
+      <td>NOM</td>
+      <td>Date de prise de fonction</td>
+      <td>Departement</td>
+      <td>Cours</td>
+    </tr>
+  </table>
+</section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<section class="update">
+    <div style='border: 1px solid '>
+        <h3 id="update">Mise a jour Enseignants</h3>
+    </div>
+    <form action="/update" method="POST" >
+    <div class="input">
+      <label for="id">ID</label>
+      <input type="text" id="id" name="id"> 
+    </div>
+    <div class="input">
+    <label for="prenom">Prenom</label>
+    <input id="prenom" name='prenom' type='text'>
+    </div>
+    <div class="input">
+        <label for="nom">nom</label>
+        <input id="nom" name='nom' type='text'>
+        </div>
+        <div class="input">
+            <label for="date">date</label>
+            <input id="date" name='date' type='date'>
+            </div>
+            <div class="input">
+                <label for="departement">Departement</label>
+                <input id="departement" name='departement' type='text'>
+                </div>
+                <div class="input">
+                    <label for="cours">Cours</label>
+                    <input id="cours" name='cours' type='text'>
+                    </div>
+                    <button type="submit">Update</button>
+    </form>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <section class="delete" style="position:absolute top">
+       <div style='border: 1px solid' ><h3 id="delete">
+          Effacer Enseignants
+        </h3></div>
+      <form action="/delete" method="POST" >
+      <div class="input">
+      <label for="id">ID</label>
+      <input type="text" id="id" name="id">
+      <input type="button" value='effacer' onclick="supprimer()">
+      <button type='submit'>Delete</button>
+      </div>
+      </form>
+  </section>    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <script>
+     function ajouter () {
+       let i=document.getElementById('iden').value;
+    let p=document.getElementById("prenom").value;
+let n=document.getElementById("Nom").value;
+let d=document.getElementById("dpf").value;
+let depar=document.getElementById("dpt").value;
+let cour=document.getElementById("crs").value;
+tabl(i,p,n,d,depar,cour);
+}
+function tabl(i,p,n,d,depar,cour){
+    let t=document.getElementById("tableau");
+    let tr=document.createElement('tr');
+    let td6=document.createElement("td");
+    td6.innerHTML=i;
+    let td1=document.createElement("td");
+    td1.innerHTML=p;
+    let td2=document.createElement("td");
+    td2.innerHTML=n;
+    let td3=document.createElement("td");
+    td3.innerHTML=d;
+    let td4=document.createElement("td");
+    td4.innerHTML=depar;
+    let td5=document.createElement("td");
+    td5.innerHTML=cour;
+    
+    tr.appendChild(td6);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+    
+    t.appendChild(tr);
+}
+function supprimer(td6){
+  let s=document.getElementById('id').value;
+  recuperer(s,td6);
+}
+function recuperer(s,td6){
+  let t=document.getElementById('tableau');
+ td6.removeChild(s);
+ t.removeChild(td6);
+}
+  </script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+	<link rel="stylesheet"href="projet.css"/>
+	<title>Mon projet</title>
+  </head>
+  <body>
+
+<div class="projet">	
+<br/>
+<h3>Zone de controle</h3>
+<p>Entrer votre fonction <input type="text" id="nom" value="Math.sin(x)" size="25"></p>
+<p>x mini <input type="number" id="xmin" value="0" size="3"></br></br>
+x Maxi <input type="number" id="xMax" value="8" size="3"></p>
+<p>y mini <input type="number" id="ymin" value="-3" size="3"></br></br>
+y Maxi <input type="number" id="yMax" value="1" size="3"></p></br></br>
+<div>Dimensionnement du canevas <br/> height <input type="range" id="hauteur" min="200" max="400" step="1" value="300" size="3">
+<br/>
+ width<input type="range" id="largeur" min="100" max="500" step="1" value="300" size="3"></div>
+<br/>
+<p id="epaisseur_trait">épaisseur trait<input type="range" class="epaisseur_trait" id="epais" min="1" max="4" step="1" value="2" size="2"></p>
+<p id="couleur_trait">couleur trait <input type="color" class="couleur_trait" id="couleur" value="#0098f8" size="6"></p>
+</div>
+<canvas id = "schema" height = "500" width = "500" >
+</canvas>
+<script>
+zone_dessin = document.getElementById("schema");
+graphe = zone_dessin.getContext('2d');
+ 
+function rafraichissement_ecran() {
+	var hauteur=document.getElementById("hauteur");
+ 	var largeur=document.getElementById("largeur");
+ 	var largeurbis=document.getElementById("largeurbis");
+ 	var hauteurbis=document.getElementById("hauteurbis");
+ 	var xmin=document.getElementById("xmin");
+	var ymin=document.getElementById("ymin");
+	var ymin2=document.getElementById("ymin2");
+	var yMax=document.getElementById("yMax");
+	var yMax2=document.getElementById("yMax2");
+	var xminAff=document.getElementById("xminAff");
+	var fxminAff2=document.getElementById("fxminAff2");
+	var fxminAff3=document.getElementById("fxminAff3");
+	var xMax=document.getElementById("xMax");
+	var xMaxAff=document.getElementById;
+	var xMaxAff2=document.getElementById;
+	nom=document.getElementById("nom");
+	var nomAff=document.getElementById;
+	var epais=document.getElementById;
+ 	var couleur=document.getElementById;
+ 	var ep=document.getElementById;
+ 	var co=document.getElementById;
+ 	var compteur=parseFloat(xmin.value);
+ 	zone_dessin.height=hauteur.value;
+ 	zone_dessin.width=largeur.value;
+ 	var i=parseInt(xMax.value);
+ 	var echx=(zone_dessin.width)/(xMax.value-xmin.value);
+ 	var echy=(zone_dessin.height)/(yMax.value-ymin.value);
+ 	var echellex=document.getElementById;
+ 	var echelley=document.getElementById;
+ 	var xmini=document.getElementById;
+ 	var zoney=document.getElementById;
+ 	var ymini=document.getElementById;
+ 		
+		axes();
+		graphe.font='10pt Times New Roman';
+		graphe.fillText(xmin.value,1,(zone_dessin.height/2)+15);
+		graphe.fillText(ymin.value,(zone_dessin.width/2)+2,zone_dessin.height-1);
+		graphe.fillText(yMax.value,(zone_dessin.width/2)+5,10);
+		graphe.fillText(xMax.value,zone_dessin.width-15,(zone_dessin.height/2)+15);
+		graphe.fillText((eval(xMax.value)+eval(xmin.value))/2,(zone_dessin.width/2)+2,(zone_dessin.height/2)+15);
+		
+		
+		graphe.beginPath();
+		
+		while(compteur<i) {
+			graphe.lineTo(echx*(compteur-xmin.value),zone_dessin.height-((f(compteur))-ymin.value)*echy);
+			compteur=(compteur+0.01);
+		}	
+	graphe.stroke();
+}
+var intervalle=setInterval(rafraichissement_ecran,70);
+
+function f(x) {
+var y=eval(nom.value);
+return (y);
+}
+function axes() {
+	graphe.beginPath();
+	graphe.lineWidth="1";
+	graphe.strokeStyle="black";
+	graphe.moveTo(0,zone_dessin.height/2);
+	graphe.lineTo(zone_dessin.width,zone_dessin.height/2);
+	graphe.lineTo(zone_dessin.width-5,(zone_dessin.height/2)-5);
+	graphe.moveTo(zone_dessin.width,zone_dessin.height/2);
+	graphe.lineTo(zone_dessin.width-5,(zone_dessin.height/2)+5);
+	graphe.stroke();
+	graphe.moveTo(zone_dessin.width/2,zone_dessin.height);
+	graphe.lineTo(zone_dessin.width/2,0);
+	graphe.lineTo((zone_dessin.width/2)-5,5);
+	graphe.moveTo(zone_dessin.width/2,0);
+	graphe.lineTo((zone_dessin.width/2)+5,5);
+	graphe.stroke();	
+}
+
+	
+</script>
+
+<span id='hauteurbis'></span> <span id='largeurbis'></span>
+   
+<span id="clr"></span>
+	 
+	 
+	
+		
+	
+	
+	
+
+	
+	
+	
+
+
+
+
+
+  </body>
+</html> 
